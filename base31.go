@@ -23,7 +23,7 @@ var (
 		'w': 27, 'x': 28, 'y': 29, 'z': 30}
 )
 
-// Encode encodes a value to base31
+// Encode encodes a uint64 value to string in base31 format
 func Encode(value uint64) string {
 	var res [16]byte
 	var i int
@@ -51,6 +51,7 @@ func Decode(s string) uint64 {
 }
 */
 
+// Decode decodes a base31-encoded string back to uint64
 func Decode(s string) uint64 {
 	res := uint64(0)
 	l := len(s) - 1
